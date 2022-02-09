@@ -1151,8 +1151,8 @@ export default class VideoPlayer extends Component {
     let source = require('./assets/img/10s-rewind.png')
     return this.renderControl(
       <Image source={source} style={{
-        width: 10,
-        height: 10
+        width: 16,
+        height: 16
       }}/>,
       this.methods.skipBack,
       styles.controls.skipBack
@@ -1397,7 +1397,6 @@ const styles = {
       width: 10,
       height: 10,
       zIndex: 0,
-      marginLeft: 16
     },
     title: {
       alignItems: 'center',
