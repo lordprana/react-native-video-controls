@@ -982,7 +982,7 @@ export default class VideoPlayer extends Component {
           style={[styles.controls.column]}
           imageStyle={[styles.controls.vignette]}>
           <SafeAreaView style={styles.controls.topControlGroup}>
-            {backControl}
+            {!this.props.disableBack && backControl}
             {fullscreenControl}
             <View style={styles.controls.pullRight}>
               {volumeControl}
