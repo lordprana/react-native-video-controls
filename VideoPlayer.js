@@ -12,6 +12,7 @@ import {
   Image,
   View,
   Text,
+  Alert,
 } from 'react-native';
 import padStart from 'lodash/padStart';
 
@@ -210,7 +211,7 @@ export default class VideoPlayer extends Component {
     state.duration = data.duration;
     state.loading = false;
     this.setState(state);
-
+    Alert.alert(data.textTracks)
     if (state.showControls) {
       this.setControlTimeout();
     }
