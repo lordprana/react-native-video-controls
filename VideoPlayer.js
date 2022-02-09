@@ -1380,7 +1380,7 @@ const styles = {
       justifyContent: 'flex-start',
       flexDirection: 'row',
       width: null,
-      margin: 12,
+      // margin: 12,
       marginBottom: 18,
     },
     bottomControlGroup: {
