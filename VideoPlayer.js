@@ -1391,8 +1391,8 @@ const styles = {
     },
     skipBack:{
       position: 'relative',
-      width: 80,
-      height: 80,
+      width: 10,
+      height: 10,
       zIndex: 0,
       marginLeft: 16
     },
