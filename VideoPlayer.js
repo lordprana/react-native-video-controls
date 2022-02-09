@@ -1394,7 +1394,7 @@ const styles = {
       zIndex: 0,
     },
     skipBack:{
-      position: 'relative',
+      // position: 'relative',
       width: 10,
       zIndex: 0,
     },
