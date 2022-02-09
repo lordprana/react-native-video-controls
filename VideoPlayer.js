@@ -1395,7 +1395,6 @@ const styles = {
     skipBack:{
       position: 'relative',
       width: 10,
-      height: 10,
       zIndex: 0,
     },
     title: {
