@@ -110,6 +110,7 @@ export default class VideoPlayer extends Component {
       togglePlayPause: this._togglePlayPause.bind(this),
       toggleControls: this._toggleControls.bind(this),
       toggleTimer: this._toggleTimer.bind(this),
+      skipBack: this._skipBack.bind(this)
     };
 
     /**
@@ -514,6 +515,14 @@ export default class VideoPlayer extends Component {
     }
 
     this.setState(state);
+  }
+
+  /**
+   * Skip back ten seconds
+   */
+  _skipBack() {
+    const currentTime = this.calculateTimeFromSeekerPosition()
+    this.seekTo(currentTime - 10000)
   }
 
   /**
@@ -974,9 +983,9 @@ export default class VideoPlayer extends Component {
           imageStyle={[styles.controls.vignette]}>
           <SafeAreaView style={styles.controls.topControlGroup}>
             {backControl}
+            {fullscreenControl}
             <View style={styles.controls.pullRight}>
               {volumeControl}
-              {fullscreenControl}
             </View>
           </SafeAreaView>
         </ImageBackground>
@@ -1068,6 +1077,7 @@ export default class VideoPlayer extends Component {
           <SafeAreaView
             style={[styles.controls.row, styles.controls.bottomControlGroup]}>
             {playPauseControl}
+            {this.renderSkipBack()}
             {this.renderTitle()}
             {timerControl}
           </SafeAreaView>
@@ -1130,6 +1140,15 @@ export default class VideoPlayer extends Component {
       this.methods.togglePlayPause,
       styles.controls.playPause,
     );
+  }
+
+  renderSkipBack() {
+    let source = require('./assets/img/10s-rewind.png')
+    return this.renderControl(
+      <Image source={source} />,
+      this.methods.skipBack,
+      styles.controls.skipBack
+    )
   }
 
   /**
@@ -1364,6 +1383,12 @@ const styles = {
       position: 'relative',
       width: 80,
       zIndex: 0,
+    },
+    skipBack:{
+      position: 'relative',
+      width: 80,
+      height: 80,
+      zIndex: 0
     },
     title: {
       alignItems: 'center',
