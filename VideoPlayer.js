@@ -1079,7 +1079,8 @@ export default class VideoPlayer extends Component {
             <View style={{
               display: 'flex',
               flexDirection: 'row',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              alignItems: 'center'
             }}>
               {playPauseControl}
               {this.renderSkipBack()}
