@@ -1076,8 +1076,13 @@ export default class VideoPlayer extends Component {
           {seekbarControl}
           <SafeAreaView
             style={[styles.controls.row, styles.controls.bottomControlGroup]}>
-            {playPauseControl}
-            {this.renderSkipBack()}
+            <View style={{
+              display: 'flex',
+              flexDirection: 'row'
+            }}>
+              {playPauseControl}
+              {this.renderSkipBack()}
+            </View>
             {this.renderTitle()}
             {timerControl}
           </SafeAreaView>
@@ -1358,7 +1363,7 @@ const styles = {
     },
     topControlGroup: {
       alignSelf: 'stretch',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'space-between',
       flexDirection: 'row',
       width: null,
@@ -1388,7 +1393,8 @@ const styles = {
       position: 'relative',
       width: 80,
       height: 80,
-      zIndex: 0
+      zIndex: 0,
+      marginLeft: 16
     },
     title: {
       alignItems: 'center',
