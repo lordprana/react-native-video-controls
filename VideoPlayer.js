@@ -1150,7 +1150,10 @@ export default class VideoPlayer extends Component {
   renderSkipBack() {
     let source = require('./assets/img/10s-rewind.png')
     return this.renderControl(
-      <Image source={source} />,
+      <Image source={source} style={{
+        width: 10,
+        height: 10
+      }}/>,
       this.methods.skipBack,
       styles.controls.skipBack
     )
