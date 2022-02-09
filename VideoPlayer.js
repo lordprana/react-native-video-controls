@@ -1389,7 +1389,7 @@ const styles = {
     },
     playPause: {
       position: 'relative',
-      width: 80,
+      width: 20,
       zIndex: 0,
     },
     skipBack:{
