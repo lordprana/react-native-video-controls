@@ -1086,7 +1086,15 @@ export default class VideoPlayer extends Component {
               {this.renderSkipBack()}
             </View>
             {this.renderTitle()}
-            {timerControl}
+
+            <View style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              {timerControl}
+            </View>
           </SafeAreaView>
         </ImageBackground>
       </Animated.View>
@@ -1368,8 +1376,8 @@ const styles = {
     },
     topControlGroup: {
       alignSelf: 'stretch',
-      alignItems: 'flex-start',
-      justifyContent: 'space-between',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
       flexDirection: 'row',
       width: null,
       margin: 12,
