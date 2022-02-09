@@ -211,7 +211,7 @@ export default class VideoPlayer extends Component {
     state.duration = data.duration;
     state.loading = false;
     this.setState(state);
-    Alert.alert(data.textTracks)
+    console.log(data.textTracks)
     if (state.showControls) {
       this.setControlTimeout();
     }
