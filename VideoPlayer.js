@@ -1376,7 +1376,7 @@ const styles = {
     },
     bottomControlGroup: {
       alignSelf: 'stretch',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'space-between',
       marginLeft: 12,
       marginRight: 12,
