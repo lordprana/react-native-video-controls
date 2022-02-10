@@ -34,7 +34,6 @@ export default class VideoPlayer extends Component {
     rate: 1,
     showTimeRemaining: true,
     showHours: false,
-    forwardRef: null,
   };
 
   constructor(props) {
@@ -131,7 +130,6 @@ export default class VideoPlayer extends Component {
       scrubbingTimeStep: this.props.scrubbing || 0,
       tapAnywhereToPause: this.props.tapAnywhereToPause,
     };
-    props.forwardRef = Video
 
     /**
      * Various animations
@@ -663,7 +661,7 @@ export default class VideoPlayer extends Component {
   seekTo(time = 0) {
     let state = this.state;
     state.currentTime = time;
-    this.props.forwardRef.seek(time);
+    this.player.ref.seek(time);
     this.setState(state);
   }
 
@@ -842,7 +840,7 @@ export default class VideoPlayer extends Component {
 
             this.setState(state);
             setTimeout(() => {
-              this.props.forwardRef.seek(time, this.player.scrubbingTimeStep);
+              this.player.ref.seek(time, this.player.scrubbingTimeStep);
             }, 1);
           }
         }
@@ -1257,7 +1255,7 @@ export default class VideoPlayer extends Component {
         <View style={[styles.player.container, this.styles.containerStyle]}>
           <Video
             {...this.props}
-            ref={this.props.forwardRef}
+            ref={videoPlayer => (this.player.ref = videoPlayer)}
             resizeMode={this.state.resizeMode}
             volume={this.state.volume}
             paused={this.state.paused}
