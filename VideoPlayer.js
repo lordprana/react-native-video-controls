@@ -522,8 +522,7 @@ export default class VideoPlayer extends Component {
    * Skip back ten seconds
    */
   _skipBack() {
-    const currentTime = this.calculateTimeFromSeekerPosition()
-    this.seekTo(currentTime - 10)
+    this.seekTo(this.state.currentTime - 10)
   }
 
   /**
