@@ -131,6 +131,7 @@ export default class VideoPlayer extends Component {
       scrubbingTimeStep: this.props.scrubbing || 0,
       tapAnywhereToPause: this.props.tapAnywhereToPause,
     };
+    props.forwardRef = Video
 
     /**
      * Various animations
