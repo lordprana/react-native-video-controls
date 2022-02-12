@@ -252,6 +252,11 @@ export default class VideoPlayer extends Component {
    */
   _onSeek(data = {}) {
     let state = this.state;
+
+    if (typeof this.props.onSeek === 'function') {
+      this.props.onSeek(...arguments);
+    }
+
     if (state.scrubbing) {
       state.scrubbing = false;
       state.currentTime = data.currentTime;
@@ -261,10 +266,6 @@ export default class VideoPlayer extends Component {
       if (!state.seeking) {
         this.setControlTimeout();
         state.paused = state.originallyPaused;
-      }
-
-      if (typeof this.props.onSeek === 'function') {
-        this.props.onSeek(...arguments);
       }
 
       this.setState(state);
