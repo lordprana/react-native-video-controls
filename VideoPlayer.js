@@ -541,7 +541,7 @@ export default class VideoPlayer extends Component {
   _toggleCC() {
     if (this.state.ccOn) {
       this.props.onChooseCC(null)
-      this.setState({ showCCMenu: false })
+      this.setState({ showCCMenu: false, ccOn: false })
     } else {
       this.setState({ showCCMenu: true })
     }
@@ -1121,7 +1121,7 @@ export default class VideoPlayer extends Component {
                     {this.props.ccOptions.map((language) =>
                       <TouchableHighlight onPress={() => {
                         this.props.onChooseCC(language)
-                        this.setState({ showCCMenu: false })
+                        this.setState({ showCCMenu: false, ccOn: true })
                       }}>
                         <Text style={styles.controls.ccMenuOptionText} key={language}>{language}</Text>
                       </TouchableHighlight>,
