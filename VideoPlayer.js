@@ -1493,7 +1493,7 @@ const styles = {
     },
     ccMenuOptionText: {
       color: 'white',
-      marginBottom: 8,
+      marginBottom: 20,
     },
   }),
   volume: StyleSheet.create({
