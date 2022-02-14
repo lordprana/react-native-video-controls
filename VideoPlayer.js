@@ -1451,6 +1451,7 @@ const styles = {
       backgroundColor: 'black',
       position: 'absolute',
       bottom: 20,
+      zIndex: 2
     },
     ccMenuOptionText: {
       color: 'white',
