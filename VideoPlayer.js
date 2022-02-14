@@ -1102,7 +1102,6 @@ export default class VideoPlayer extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-              {timerControl}
               {this.state.showCCMenu && (
                 <View>
                   <View style={styles.controls.ccMenu}>
@@ -1112,6 +1111,7 @@ export default class VideoPlayer extends Component {
                   </View>
                 </View>
               )}
+              {timerControl}
             </View>
           </SafeAreaView>
         </ImageBackground>
