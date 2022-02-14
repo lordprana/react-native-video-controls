@@ -1127,8 +1127,9 @@ export default class VideoPlayer extends Component {
                         this.props.onChooseCC(language)
                         this.setState({ showCCMenu: false, ccOn: true })
                       }}
-                      style={styles.controls.ccMenuOption}>
-                        <Text style={styles.controls.ccMenuOptionText} key={language}>{language}</Text>
+                      style={styles.controls.ccMenuOption}
+                      key={language}>
+                        <Text style={styles.controls.ccMenuOptionText}>{language}</Text>
                       </TouchableHighlight>,
                     )}
                   </View>
