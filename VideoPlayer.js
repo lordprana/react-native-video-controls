@@ -1102,15 +1102,15 @@ export default class VideoPlayer extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-              {this.state.showCCMenu && (
-                <View>
-                  <View style={styles.controls.ccMenu}>
-                    {this.props.ccOptions.map((language) =>
-                      <Text style={styles.controls.ccMenuOptionText}>{language}</Text>,
-                    )}
-                  </View>
-                </View>
-              )}
+              {/*{this.state.showCCMenu && (*/}
+              {/*  <View>*/}
+              {/*    <View style={styles.controls.ccMenu}>*/}
+              {/*      {this.props.ccOptions.map((language) =>*/}
+              {/*        <Text style={styles.controls.ccMenuOptionText}>{language}</Text>,*/}
+              {/*      )}*/}
+              {/*    </View>*/}
+              {/*  </View>*/}
+              {/*)}*/}
               {timerControl}
             </View>
           </SafeAreaView>
