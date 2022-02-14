@@ -1126,7 +1126,8 @@ export default class VideoPlayer extends Component {
                       <TouchableHighlight onPress={() => {
                         this.props.onChooseCC(language)
                         this.setState({ showCCMenu: false, ccOn: true })
-                      }}>
+                      }}
+                      style={styles.controls.ccMenuOption}>
                         <Text style={styles.controls.ccMenuOptionText} key={language}>{language}</Text>
                       </TouchableHighlight>,
                     )}
@@ -1492,9 +1493,11 @@ const styles = {
       zIndex: 2,
       padding: 16
     },
+    ccMenuOption: {
+      paddingVertical: 10
+    },
     ccMenuOptionText: {
       color: 'white',
-      marginBottom: 20,
     },
   }),
   volume: StyleSheet.create({
