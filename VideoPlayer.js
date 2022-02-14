@@ -539,9 +539,9 @@ export default class VideoPlayer extends Component {
    * If cc on, turns off. If off, displays CC men
    */
   _toggleCC() {
-    if (this.state.ccOn) {
+    if (this.props.captionsOn) {
       this.props.onChooseCC(null)
-      this.setState({ showCCMenu: false, ccOn: false })
+      this.setState({ showCCMenu: false })
     } else {
       if (this.state.showCCMenu) {
         this.setState({ showCCMenu: false })
@@ -1125,7 +1125,7 @@ export default class VideoPlayer extends Component {
                     {this.props.ccOptions.map((language) =>
                       <TouchableHighlight onPress={() => {
                         this.props.onChooseCC(language)
-                        this.setState({ showCCMenu: false, ccOn: true })
+                        this.setState({ showCCMenu: false })
                       }}
                       style={styles.controls.ccMenuOption}
                       key={language}>
@@ -1214,7 +1214,7 @@ export default class VideoPlayer extends Component {
 
   renderCC() {
     let source =
-      this.state.ccOn === true
+      this.props.captionsOn === true
         ? require('./assets/img/cc-off.png')
         : require('./assets/img/cc.png')
     return this.renderControl(
