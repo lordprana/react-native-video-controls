@@ -543,7 +543,11 @@ export default class VideoPlayer extends Component {
       this.props.onChooseCC(null)
       this.setState({ showCCMenu: false, ccOn: false })
     } else {
-      this.setState({ showCCMenu: true })
+      if (this.state.showCCMenu) {
+        this.setState({ showCCMenu: false })
+      } else {
+        this.setState({ showCCMenu: true })
+      }
     }
   }
 
