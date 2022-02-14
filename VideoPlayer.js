@@ -1121,7 +1121,7 @@ export default class VideoPlayer extends Component {
             }}>
               {this.state.showCCMenu && (
                 <View>
-                  <View style={styles.controls.ccMenu}>
+                  <View style={styles.controls.ccMenu} pointerEvents={'box-only'}>
                     {this.props.ccOptions.map((language) =>
                       <TouchableHighlight onPress={() => {
                         this.props.onChooseCC(language)
