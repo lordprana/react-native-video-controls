@@ -71,7 +71,7 @@ export default class VideoPlayer extends Component {
       currentTime: 0,
       error: false,
       duration: 0,
-      ccOn: false,
+      ccOn: this.props.captionsOn,
       showCCMenu: false,
     }
 
