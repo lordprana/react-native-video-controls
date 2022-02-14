@@ -1491,10 +1491,10 @@ const styles = {
       position: 'absolute',
       bottom: 20,
       zIndex: 2,
-      padding: 16
     },
     ccMenuOption: {
-      paddingVertical: 10
+      paddingVertical: 8,
+      paddingHorizontal: 16
     },
     ccMenuOptionText: {
       color: 'white',
