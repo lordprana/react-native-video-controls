@@ -71,6 +71,8 @@ export default class VideoPlayer extends Component {
       currentTime: 0,
       error: false,
       duration: 0,
+      ccOn: false,
+      showCCMenu: true
     };
 
     /**
@@ -1099,6 +1101,13 @@ export default class VideoPlayer extends Component {
               alignItems: 'center'
             }}>
               {timerControl}
+              { this.state.showCCMenu && (
+                <View style={styles.controls.ccMenu}>
+                  { this.props.ccOptions.map((language) => {
+                    <Text>{language}</Text>
+                  })}
+                </View>
+              )}
             </View>
           </SafeAreaView>
         </ImageBackground>
@@ -1430,6 +1439,12 @@ const styles = {
       fontSize: 11,
       textAlign: 'right',
     },
+    ccMenu: {
+      backgroundColor: 'black',
+      position: 'absolute',
+      bottom: 20
+
+    }
   }),
   volume: StyleSheet.create({
     container: {
