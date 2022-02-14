@@ -1103,9 +1103,7 @@ export default class VideoPlayer extends Component {
               {timerControl}
               { this.state.showCCMenu && (
                 <View style={styles.controls.ccMenu}>
-                  { this.props.ccOptions.map((language) => {
-                    <Text>{language}</Text>
-                  })}
+                  { this.props.ccOptions.map((language) => <Text>{language}</Text>) }
                 </View>
               )}
             </View>
