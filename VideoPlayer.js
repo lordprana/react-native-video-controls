@@ -1212,7 +1212,10 @@ export default class VideoPlayer extends Component {
         ? require('./assets/img/cc-off.png')
         : require('./assets/img/cc.png')
     return this.renderControl(
-      <Image source={source} />,
+      <Image source={source} style={{
+        width: 16,
+        height: 16
+      }}/>,
       this.methods.toggleCC,
       styles.controls.ccButton,
     )
@@ -1453,6 +1456,10 @@ const styles = {
     },
     skipBack: {
       // position: 'relative',
+      width: 10,
+      zIndex: 0,
+    },
+    ccButton: {
       width: 10,
       zIndex: 0,
     },
