@@ -321,7 +321,9 @@ export default class VideoPlayer extends Component {
           this.methods.togglePlayPause()
           this.resetControlTimeout()
         } else {
-          this.methods.toggleControls()
+          if (!this.state.showCCMenu) {
+            this.methods.toggleControls()
+          }
         }
         this.player.tapActionTimeout = 0
       }, this.props.doubleTapTime)
