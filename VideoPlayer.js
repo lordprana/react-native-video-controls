@@ -72,7 +72,7 @@ export default class VideoPlayer extends Component {
       error: false,
       duration: 0,
       ccOn: false,
-      showCCMenu: true,
+      showCCMenu: false,
     }
 
     /**
@@ -114,6 +114,7 @@ export default class VideoPlayer extends Component {
       toggleControls: this._toggleControls.bind(this),
       toggleTimer: this._toggleTimer.bind(this),
       skipBack: this._skipBack.bind(this),
+      toggleCC: this._toggleCC.bind(this),
     }
 
     /**
@@ -532,6 +533,18 @@ export default class VideoPlayer extends Component {
    */
   _skipBack() {
     this.seekTo(this.state.currentTime - 10)
+  }
+
+  /**
+   * If cc on, turns off. If off, displays CC men
+   */
+  _toggleCC() {
+    if (this.state.ccOn) {
+      this.props.onChooseCC(null)
+      this.setState({ showCCMenu: false })
+    } else {
+      this.setState({ showCCMenu: true })
+    }
   }
 
   /**
@@ -1108,6 +1121,7 @@ export default class VideoPlayer extends Component {
                     {this.props.ccOptions.map((language) =>
                       <TouchableHighlight onPress={() => {
                         this.props.onChooseCC(language)
+                        this.setState({ showCCMenu: false })
                       }}>
                         <Text style={styles.controls.ccMenuOptionText} key={language}>{language}</Text>
                       </TouchableHighlight>,
@@ -1188,6 +1202,18 @@ export default class VideoPlayer extends Component {
       }} />,
       this.methods.skipBack,
       styles.controls.skipBack,
+    )
+  }
+
+  renderCC() {
+    let source =
+      this.state.ccOn === true
+        ? require('./assets/img/cc-off.png')
+        : require('./assets/img/cc.png')
+    return this.renderControl(
+      <Image source={source} />,
+      this.methods.toggleCC,
+      styles.controls.ccButton,
     )
   }
 
@@ -1451,7 +1477,7 @@ const styles = {
       backgroundColor: 'black',
       position: 'absolute',
       bottom: 20,
-      zIndex: 2
+      zIndex: 2,
     },
     ccMenuOptionText: {
       color: 'white',
