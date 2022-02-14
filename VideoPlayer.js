@@ -1466,7 +1466,7 @@ const styles = {
       zIndex: 0,
     },
     ccButton: {
-      width: 10,
+      width: 30,
       zIndex: 0,
     },
     title: {
