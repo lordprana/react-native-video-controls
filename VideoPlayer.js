@@ -1129,6 +1129,7 @@ export default class VideoPlayer extends Component {
                   </View>
                 </View>
               )}
+              {this.renderCC()}
               {timerControl}
             </View>
           </SafeAreaView>
