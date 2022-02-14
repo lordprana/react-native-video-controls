@@ -1450,6 +1450,7 @@ const styles = {
     },
     ccMenuOptionText: {
       color: 'white',
+      marginBottom: 4
     },
   }),
   volume: StyleSheet.create({
