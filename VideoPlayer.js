@@ -1213,8 +1213,8 @@ export default class VideoPlayer extends Component {
         : require('./assets/img/cc.png')
     return this.renderControl(
       <Image source={source} style={{
-        width: 16,
-        height: 16
+        width: 20,
+        height: 20
       }}/>,
       this.methods.toggleCC,
       styles.controls.ccButton,
