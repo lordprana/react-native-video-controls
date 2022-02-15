@@ -1140,7 +1140,7 @@ export default class VideoPlayer extends Component {
                       >
                         <Text style={styles.controls.ccMenuOptionText}>{language}</Text>
                       </TouchableHighlightFix>
-                    )}
+                    ))}
                   </View>
                 </View>
               )}
