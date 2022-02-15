@@ -1121,6 +1121,8 @@ export default class VideoPlayer extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
+              {this.renderCC()}
+              {timerControl}
               {this.state.showCCMenu && (
                 <View>
                   <View style={styles.controls.ccMenu}>
@@ -1129,9 +1131,9 @@ export default class VideoPlayer extends Component {
                         this.props.onChooseCC(language)
                         this.setState({ showCCMenu: false })
                       }}
-                      style={styles.controls.ccMenuOption}
-                      key={language}
-                      pointerEvents={'box-only'}
+                                          style={styles.controls.ccMenuOption}
+                                          key={language}
+                                          pointerEvents={'box-only'}
                       >
                         <Text style={styles.controls.ccMenuOptionText}>{language}</Text>
                       </TouchableHighlight>,
@@ -1139,8 +1141,6 @@ export default class VideoPlayer extends Component {
                   </View>
                 </View>
               )}
-              {this.renderCC()}
-              {timerControl}
             </View>
           </SafeAreaView>
         </ImageBackground>
