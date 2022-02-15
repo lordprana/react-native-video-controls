@@ -14,6 +14,9 @@ import {
   Text,
   Alert,
 } from 'react-native'
+import {
+  TouchableHighlight as TouchableHighlightFix,
+} from 'react-native-gesture-handler'
 import padStart from 'lodash/padStart'
 
 export default class VideoPlayer extends Component {
@@ -1115,32 +1118,34 @@ export default class VideoPlayer extends Component {
             </View>
             {this.renderTitle()}
 
-            <View style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-              {this.renderCC()}
-              {timerControl}
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               {this.state.showCCMenu && (
                 <View>
                   <View style={styles.controls.ccMenu}>
-                    {this.props.ccOptions.map((language) =>
-                      <TouchableHighlight onPress={() => {
-                        this.props.onChooseCC(language)
-                        this.setState({ showCCMenu: false })
-                      }}
-                                          style={styles.controls.ccMenuOption}
-                                          key={language}
-                                          pointerEvents={'box-only'}
+                    {this.props.ccOptions.map(language => (
+                      <TouchableHighlightFix
+                        onPress={() => {
+                          this.props.onChooseCC(language)
+                          this.setState({ showCCMenu: false })
+                        }}
+                        style={styles.controls.ccMenuOption}
+                        key={language}
+                        pointerEvents={'box-only'}
                       >
                         <Text style={styles.controls.ccMenuOptionText}>{language}</Text>
-                      </TouchableHighlight>,
+                      </TouchableHighlightFix>
                     )}
                   </View>
                 </View>
               )}
+              {this.renderCC()}
+              {timerControl}
             </View>
           </SafeAreaView>
         </ImageBackground>
@@ -1224,8 +1229,8 @@ export default class VideoPlayer extends Component {
     return this.renderControl(
       <Image source={source} style={{
         width: 20,
-        height: 20
-      }}/>,
+        height: 20,
+      }} />,
       this.methods.toggleCC,
       styles.controls.ccButton,
     )
@@ -1499,7 +1504,7 @@ const styles = {
     },
     ccMenuOption: {
       paddingVertical: 8,
-      paddingHorizontal: 16
+      paddingHorizontal: 16,
     },
     ccMenuOptionText: {
       color: 'white',
