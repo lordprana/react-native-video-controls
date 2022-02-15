@@ -1487,7 +1487,7 @@ const styles = {
       textAlign: 'center',
     },
     timer: {
-      width: 60,
+      width: 50,
       padding: 4,
     },
     timerText: {
