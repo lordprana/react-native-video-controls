@@ -1136,7 +1136,6 @@ export default class VideoPlayer extends Component {
                         }}
                         style={styles.controls.ccMenuOption}
                         key={language}
-                        pointerEvents={'box-only'}
                       >
                         <Text style={styles.controls.ccMenuOptionText}>{language}</Text>
                       </TouchableHighlightFix>
@@ -1475,7 +1474,7 @@ const styles = {
       zIndex: 0,
     },
     ccButton: {
-      width: 30,
+      width: 50,
       zIndex: 0,
     },
     title: {
