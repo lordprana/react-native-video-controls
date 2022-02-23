@@ -1491,7 +1491,8 @@ const styles = {
     dismiss: {
       flexDirection: 'row',
       width: '5%',
-      aspectRatio: 1
+      marginRight: '4%',
+      aspectRatio: 1,
     },
     playPause: {
       position: 'relative',
