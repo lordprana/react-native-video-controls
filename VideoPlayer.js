@@ -1457,7 +1457,7 @@ const styles = {
     top: {
       flex: 1,
       alignItems: 'stretch',
-      justifyContent: 'flex-end',
+      justifyContent: 'flex-start',
     },
     bottom: {
       alignItems: 'stretch',
@@ -1467,7 +1467,7 @@ const styles = {
     topControlGroup: {
       alignSelf: 'stretch',
       alignItems: 'center',
-      justifyContent: 'flex-start',
+      justifyContent: 'flex-end',
       flexDirection: 'row',
       width: null,
       // margin: 12,
