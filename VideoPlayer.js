@@ -1096,7 +1096,7 @@ export default class VideoPlayer extends Component {
     let source = require('./assets/img/close.png')
     return this.renderControl(
       <Image source={source} />,
-      this.methods.toggleFullscreen,
+      this.methods.dismiss,
       styles.controls.dismiss,
     )
   }
@@ -1457,7 +1457,7 @@ const styles = {
     top: {
       flex: 1,
       alignItems: 'stretch',
-      justifyContent: 'flex-start',
+      justifyContent: 'flex-end',
     },
     bottom: {
       alignItems: 'stretch',
