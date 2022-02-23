@@ -1469,7 +1469,7 @@ const styles = {
       alignItems: 'center',
       justifyContent: 'flex-end',
       flexDirection: 'row',
-      width: null,
+      width: '100%',
       // margin: 12,
       paddingHorizontal: 20,
       marginBottom: 18,
