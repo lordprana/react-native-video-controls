@@ -1471,6 +1471,7 @@ const styles = {
       flexDirection: 'row',
       width: null,
       // margin: 12,
+      paddingHorizontal: 20,
       marginBottom: 18,
     },
     bottomControlGroup: {
