@@ -118,6 +118,7 @@ export default class VideoPlayer extends Component {
       toggleTimer: this._toggleTimer.bind(this),
       skipBack: this._skipBack.bind(this),
       toggleCC: this._toggleCC.bind(this),
+      dismiss: this._dismiss.bind(this)
     }
 
     /**
@@ -554,6 +555,13 @@ export default class VideoPlayer extends Component {
         this.setState({ showCCMenu: true })
       }
     }
+  }
+
+  /**
+   * Go back
+   */
+  _dismiss() {
+    this.props.navigation.goBack()
   }
 
   /**
@@ -998,6 +1006,9 @@ export default class VideoPlayer extends Component {
     const fullscreenControl = this.props.disableFullscreen
       ? this.renderNullControl()
       : this.renderFullscreen()
+    const dismissControl = this.props.disableDismiss
+      ? this.renderNullControl()
+      : this.renderDismiss()
 
     return (
       <Animated.View
@@ -1017,6 +1028,7 @@ export default class VideoPlayer extends Component {
             {fullscreenControl}
             <View style={styles.controls.pullRight}>
               {volumeControl}
+              {dismissControl}
             </View>
           </SafeAreaView>
         </ImageBackground>
@@ -1074,6 +1086,18 @@ export default class VideoPlayer extends Component {
       <Image source={source} />,
       this.methods.toggleFullscreen,
       styles.controls.fullscreen,
+    )
+  }
+
+  /**
+   * Render X button to dismiss player
+   */
+  renderDismiss() {
+    let source = require('./assets/img/close.png')
+    return this.renderControl(
+      <Image source={source} />,
+      this.methods.toggleFullscreen,
+      styles.controls.dismiss,
     )
   }
 
@@ -1461,6 +1485,9 @@ const styles = {
       flexDirection: 'row',
     },
     fullscreen: {
+      flexDirection: 'row',
+    },
+    dismiss: {
       flexDirection: 'row',
     },
     playPause: {
