@@ -981,7 +981,7 @@ export default class VideoPlayer extends Component {
         }}
         style={[styles.controls.control, style]}>
         {children}
-      </TouchableHighlightFix>
+      </TouchableHighlight>
     )
   }
 
@@ -1494,7 +1494,7 @@ const styles = {
     dismiss: {
       flexDirection: 'row',
       width: '5%',
-      marginRight: '4%',
+      // marginRight: '4%',
       aspectRatio: 1,
     },
     playPause: {
