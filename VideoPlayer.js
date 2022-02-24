@@ -1494,9 +1494,9 @@ const styles = {
     },
     dismiss: {
       flexDirection: 'row',
-      width: '5%',
-      height: undefined,
-      aspectRatio: 1,
+      // width: '5%',
+      // height: undefined,
+      // aspectRatio: 1,
     },
     playPause: {
       position: 'relative',
