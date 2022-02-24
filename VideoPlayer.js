@@ -972,7 +972,7 @@ export default class VideoPlayer extends Component {
    */
   renderControl(children, callback, style = {}) {
     return (
-      <TouchableHighlightFix
+      <TouchableHighlight
         underlayColor="transparent"
         activeOpacity={0.3}
         onPress={() => {
