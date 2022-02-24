@@ -1114,6 +1114,9 @@ export default class VideoPlayer extends Component {
     const playPauseControl = this.props.disablePlayPause
       ? this.renderNullControl()
       : this.renderPlayPause()
+    const captionsControl = !!this.props.ccOptions
+      ? this.renderCC()
+      : this.renderNullControl()
 
     return (
       <Animated.View
@@ -1167,7 +1170,7 @@ export default class VideoPlayer extends Component {
                   </View>
                 </View>
               )}
-              {this.renderCC()}
+              {captionsControl}
               {timerControl}
             </View>
           </SafeAreaView>
