@@ -1461,7 +1461,6 @@ const styles = {
       flex: 1,
       alignItems: 'stretch',
       justifyContent: 'flex-start',
-      paddingRight: '4%'
     },
     bottom: {
       alignItems: 'stretch',
@@ -1474,8 +1473,9 @@ const styles = {
       justifyContent: 'flex-end',
       flexDirection: 'row',
       width: '100%',
+      paddingRight: '4%',
       // margin: 12,
-      paddingHorizontal: 20,
+      // paddingHorizontal: 20,
       marginBottom: 18,
     },
     bottomControlGroup: {
