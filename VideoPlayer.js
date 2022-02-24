@@ -118,7 +118,7 @@ export default class VideoPlayer extends Component {
       toggleTimer: this._toggleTimer.bind(this),
       skipBack: this._skipBack.bind(this),
       toggleCC: this._toggleCC.bind(this),
-      dismiss: this._dismiss.bind(this)
+      dismiss: this._dismiss.bind(this),
     }
 
     /**
@@ -1114,7 +1114,7 @@ export default class VideoPlayer extends Component {
     const playPauseControl = this.props.disablePlayPause
       ? this.renderNullControl()
       : this.renderPlayPause()
-    const captionsControl = !!this.props.ccOptions
+    const captionsControl = !!this.props.ccOptions && this.props.ccOptions.length > 0
       ? this.renderCC()
       : this.renderNullControl()
 
