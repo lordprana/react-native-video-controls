@@ -1495,6 +1495,7 @@ const styles = {
     dismiss: {
       flexDirection: 'row',
       width: '5%',
+      height: undefined,
       aspectRatio: 1,
     },
     playPause: {
