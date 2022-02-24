@@ -1461,6 +1461,7 @@ const styles = {
       flex: 1,
       alignItems: 'stretch',
       justifyContent: 'flex-start',
+      paddingRight: '4%'
     },
     bottom: {
       alignItems: 'stretch',
@@ -1494,7 +1495,6 @@ const styles = {
     dismiss: {
       flexDirection: 'row',
       width: '5%',
-      // marginRight: '4%',
       aspectRatio: 1,
     },
     playPause: {
