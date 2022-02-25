@@ -1522,7 +1522,7 @@ const styles = {
       textAlign: 'center',
     },
     timer: {
-      width: 50,
+      // width: 50,
       padding: 4,
     },
     timerText: {
