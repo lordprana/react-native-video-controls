@@ -1287,7 +1287,7 @@ export default class VideoPlayer extends Component {
   renderTimer() {
     return this.renderControl(
       <Text style={styles.controls.timerText}>{this.calculateTime()}</Text>,
-      this.methods.toggleTimer,
+      () => {},
       styles.controls.timer,
     )
   }
@@ -1522,7 +1522,6 @@ const styles = {
       textAlign: 'center',
     },
     timer: {
-      // width: 50,
       padding: 4,
     },
     timerText: {
