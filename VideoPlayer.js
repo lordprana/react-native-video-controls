@@ -499,6 +499,9 @@ export default class VideoPlayer extends Component {
    * isFullscreen state.
    */
   _toggleFullscreen() {
+    // We don't want toggleFullscreen to be enabled. Leaving the rest of the code,
+    // in case we want to reenable it in the future
+    return
     let state = this.state
 
     state.isFullscreen = !state.isFullscreen
@@ -1287,7 +1290,8 @@ export default class VideoPlayer extends Component {
   renderTimer() {
     return this.renderControl(
       <Text style={styles.controls.timerText}>{this.calculateTime()}</Text>,
-      () => {},
+      () => {
+      },
       styles.controls.timer,
     )
   }
