@@ -1366,7 +1366,6 @@ export default class VideoPlayer extends Component {
             style={[styles.player.video, this.styles.videoStyle]}
             source={this.props.source}
             onPlaybackRateChange={({playbackRate}) => {
-              console.log(playbackRate)
               if (playbackRate === 0) {
                 this.setState({ paused: true })
               } else {
