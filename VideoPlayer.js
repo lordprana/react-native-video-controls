@@ -1365,7 +1365,8 @@ export default class VideoPlayer extends Component {
             onSeek={this.events.onSeek}
             style={[styles.player.video, this.styles.videoStyle]}
             source={this.props.source}
-            onPlaybackRateChange={playbackRate => {
+            onPlaybackRateChange={({playbackRate}) => {
+              console.log(playbackRate)
               if (playbackRate === 0) {
                 this.setState({ paused: true })
               } else {
